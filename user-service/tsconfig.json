@@ -10,9 +10,10 @@
     "typeRoots" : ["./src/types", "./node_modules/@types"],
     "paths": {
       "@modules/*": ["modules/*"],
+      "@domain/*": ["domain/*"],
       "@infra/*": ["infra/*"],
-      "@errors/*": ["errors/*"],
-      "@utils/*": ["utils/*"],
+      "@dto/*": ["dto/*"],
+      "@shared/*": ["shared/*"],
     },
     "strict": true,
     "experimentalDecorators": true,

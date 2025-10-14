@@ -3,6 +3,7 @@ import 'dotenv/config'
 import cors from 'cors'
 import express from 'express'
 import { router } from '@infra/http/routes/index'
+import '@infra/container'
 
 
 
