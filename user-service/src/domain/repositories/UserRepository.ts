@@ -25,6 +25,16 @@ class UserRepository {
     }
   }
 
+  async get(id: string): Promise<User | null> {
+    try {
+      const user = await this.repository.findOneBy({ id: id})
+      
+      return user
+    } catch(error) {
+      throw error
+    }
+  }
+
   async findByEmail(email: string): Promise<User | null> {
     try {
       const user = await this.repository.findOneBy({ email: email})
