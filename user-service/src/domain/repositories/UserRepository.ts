@@ -53,6 +53,14 @@ class UserRepository {
     }
   }
 
+  async delete(id: string, queryRunner: QueryRunner): Promise<void> {
+    try {
+      await queryRunner.manager.delete(User, id)
+    } catch(error) {
+      throw error
+    }
+  }
+
   async findByEmail(email: string): Promise<User | null> {
     try {
       const user = await this.repository.findOneBy({ email: email})
