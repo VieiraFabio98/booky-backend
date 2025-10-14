@@ -35,6 +35,24 @@ class UserRepository {
     }
   }
 
+  async update(user: User, queryRunner: QueryRunner): Promise<User> {
+    try {
+
+      await queryRunner.manager.update(User, user.id, user)
+
+      const updatedUser = await queryRunner.manager.findOneBy(User, { id: user.id })
+
+      if (!updatedUser) {
+        throw new Error('Usuário não encontrado após atualização')
+      }
+  
+      return updatedUser
+
+    } catch(error) {
+      throw error
+    }
+  }
+
   async findByEmail(email: string): Promise<User | null> {
     try {
       const user = await this.repository.findOneBy({ email: email})

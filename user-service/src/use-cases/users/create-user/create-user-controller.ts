@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { container, injectable } from "tsyringe";
-import { CreateUserUseCase } from "./create-use-use-case";
+import { CreateUserUseCase } from "./create-user-use-case";
 
 
 @injectable()
