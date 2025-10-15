@@ -12,6 +12,17 @@ services:
     volumes:
       - pg_user_data:/var/lib/postgresql/data
 
+  postgres_flight:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: flight
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: flightdb
+    ports:
+      - "5433:5432" # note que a porta externa precisa ser diferente
+    volumes:
+      - pg_flight_data:/var/lib/postgresql/data
+
   redis:
     image: redis:8
     ports:
@@ -21,4 +32,5 @@ services:
 
 volumes:
   pg_user_data:
+  pg_flight_data:
   redis_data:
