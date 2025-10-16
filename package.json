@@ -1,0 +1,7 @@
+{
+  "scripts": {
+    "start:user": "cd user-service && yarn dev",
+    "start:flight": "cd flight-service && yarn dev",
+    "start:all": "npm run start:user & npm run start:flight"
+  }
+}
